@@ -42,6 +42,21 @@ function App () {
   const { search, updateSearch, error } = useSearch()
   const { movies, loading, getMovies } = useMovies({ search, sort })
 
+  /* Debounce: retraso al obtener el texto (valor) actual de los inputs
+
+  tutorial Midudev 
+  https://www.youtube.com/watch?v=GOEiMwDJ3lc&t=7020s
+
+  Librería just-debounce-it de Angus C 
+  https://github.com/angus-c/just#just-debounce-it
+
+  https://github.com/angus-c/just/blob/master/packages/function-debounce/index.cjs
+
+  Lodash 
+  https://lodash.com/docs/4.17.15#debounce
+
+  Custom Hooks UseDebounce
+  https://www.npmjs.com/package/use-debounce */
   function debounce(fn, wait, callFirst) {
   var timeout = null;
   var debouncedFn = null;
